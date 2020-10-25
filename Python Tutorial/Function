@@ -1,0 +1,70 @@
+Function
+    什麼是函數：一系列Python語句的組合，可在程式中運行一次或多次
+    一般是完成具體的獨立功能
+    為什麼要使用函數：代碼複用最大化，及最小化冗長代碼，整體代碼結構清晰，問題局部化
+    ▣ 定義： def 函數名()： 
+                       函數體[一系列的Python語句，表示獨立的功能]
+    ▣ 調用：執行函數定義裡面的代碼塊，在調用函數前須先定義
+    
+    ▧ 參數分類：① 必選參數 ② 默認參數[缺省參數] ③ 可選參數 ④ 關鍵字參數
+        參數：其實就是函數為了實現某項特定的功能，進而為了得到實現功能所需要的數據
+        ① 必選參數
+            def sum(a,b): #a,b為形式參數(形參)：意義上的一種參數，在定義的時候是不佔內存地址的
+                  sum = a+b
+                  print(sum)
+            pass
+            #函數調用
+            sum(20,25) #20,15為實際參數(實參)：實實在在的參數，佔用內存地址
+            sum(15) #不能這樣寫--報錯
+        ② 默認參數[缺省參數]
+            def sum(a = 20,b = 30):
+                  print('默認參數使用= %d' %(a+b))
+                  pass
+            #默認函數調用：在調用的時候如果未賦值，就會用定義函數時給定的默認值
+            sum() #20+30 = 50
+            sum(10) #10+30 = 40
+            
+        ③ 可選參數(可變參數):當參數的個數不確定時使用，比較靈活
+            def getComputer(*args):
+                print(args)
+                pass
+            getComputer(1) #(1,)元組
+            getComputer(1, 2) #(1, 2)
+            
+            -------------------------
+            def getComputer(*args): #可變長的參數
+                result = 0
+                for item in args:
+                    result += item
+                print('result = %d' %result)
+            getComputer(1) #result = 1
+            getComputer(1, 2) #result = 3
+            getComputer(1, 2, 3, 4, 5, 6, 7, 8, 9)  #result = 45
+            
+        ④ 關鍵字參數:
+            ▣ **來定義
+            ▣ 在函數體內，關鍵字參數為字典類型，key 是一個字符串
+            def keyFunc(**kwargs):
+                  print(kwargs)
+                  pass
+            dictA = {'name':'Peter','age':35}
+            keyFunc(**dictA) #{'name':'Peter','age':35}
+            keyFunc(name = 'peter', age = 26,) #{'name': 'Peter', 'age': 35}
+            keyFunc() #{}
+            
+         -----------------混合使用---------------------
+          def complexFunc(*args,**kwargs):
+               print(args)
+               print(kwargs)
+               pass
+          complexFunc(1,2,3,4,name = 'Taylor') #{1, 2, 3, 4} \n {'name' = 'Taylor'}
+          complexFunc(age = 25) #() \n {'age' = 25}
+          
+          ---------------------------------
+          def TestMup(**kwargs, *args): #不符合要求--報錯
+          ' ' '
+          可選參數必須放到關鍵字可選參數之前
+          可選參數：接受的數據是一個元組類型
+          關鍵字可選參數：接受的數據是一個字段類型
+          ' ' '
+        
