@@ -2,6 +2,7 @@
 ## Description
 Record my learning process🧸
 ## Usage
-Jupyter Notebook
+- Jupyter Notebook
+- Tableau
 ## Reference
 <a href = "https://stackoverflow.com">stackoverflow</a>
