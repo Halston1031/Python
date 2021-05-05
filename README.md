@@ -1,4 +1,4 @@
-![](https://github.com/Halston1031/WEB/blob/main/Resources/Analytics.jpg)
+![](https://github.com/Halston1031/Web/blob/main/Pratices/Resources/Analytics.jpg)
 ## Description
 Record my learning process🧸
 ## Usage
